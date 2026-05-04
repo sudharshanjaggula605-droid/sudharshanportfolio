@@ -97,12 +97,13 @@
     /* PROJECTS */
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
     .project-card{background:linear-gradient(135deg,var(--bg2),rgba(0,51,102,0.05));border:1px solid var(--border);border-radius:16px;padding:1.5rem;cursor:pointer;transition:all 0.4s ease;position:relative;overflow:hidden;text-align:left;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+    .project-card[data-live-demo]{cursor:pointer}
     .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent2));opacity:0;transition:all 0.4s ease;transform:scaleX(0)}
     .project-card::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(0,204,204,0.05),rgba(0,51,102,0.03));opacity:0;transition:opacity 0.4s ease}
     .project-card:hover{border-color:rgba(0,204,204,0.4);transform:translateY(-8px) scale(1.02);box-shadow:0 12px 40px rgba(0,204,204,0.2)}
     .project-card:hover::before{opacity:1;transform:scaleX(1)}
     .project-card:hover::after{opacity:1}
-    a.project-card{text-decoration:none;color:inherit;display:block}
+    .project-card{text-decoration:none;color:inherit;display:block}
     .proj-num{font-size:clamp(0.65rem,1.5vw,0.7rem);font-family:var(--mono);color:var(--muted);margin-bottom:1rem}
     .proj-title{font-size:clamp(0.95rem,1.8vw,1.05rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:0.5rem;color:var(--text);transition:color 0.3s}
     .project-card:hover .proj-title{color:var(--accent)}
@@ -360,6 +361,14 @@
           <div class="skill-chip"><i class="fas fa-chart-line"></i> Leadership</div>
         </div>
       </div>
+      <div class="skills-group">
+        <div class="skills-group-title">Soft Skills</div>
+        <div class="skills-grid">
+          <div class="skill-chip">Adaptability</div>
+          <div class="skill-chip">Teamwork &amp; Problem-solving</div>
+          <div class="skill-chip">Critical Thinking</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -409,34 +418,53 @@
       <div class="section-label">Projects</div>
       <div class="projects-grid">
 
-        <a href="https://github.com/sudharshanjaggula605-droid/student-club.git" target="_blank" class="project-card">
+        <div class="project-card" data-live-demo="https://humeranaaz397-ops.github.io/student_club/">
           <div class="proj-num">01</div>
           <div class="proj-title">Student Club </div>
-          <p class="proj-desc">Web-based platform to streamline student club operations — event scheduling, attendance tracking, member management, and real-time announcements in one centralized interface.</p>
+          <p class="proj-desc">Developed the frontend of Student Club, a platform enabling students to communicate with mentors, share ideas, and access certification courses. Created student and teacher pages, building a user-friendly site that supports learning beyond textbooks and enhances knowledge.</p>
           <div class="proj-tags">
             <span class="proj-tag">HTML</span>
             <span class="proj-tag">CSS</span>
             <span class="proj-tag">JavaScript</span>
-            <span class="proj-tag">Node.js</span>
-            <span class="proj-tag">MongoDB</span>
+            <!-- <span class="proj-tag">Node.js</span>
+            <span class="proj-tag">MongoDB</span> -->
           </div>
           <div class="proj-links">
-            <span class="proj-link">↗ GitHub</span>
-          </div>
-        </a>
-
-        <div class="project-card">
-          <div class="proj-num">02</div>
-          <div class="proj-title">Energy Saver AI</div>
-          <p class="proj-desc">AI-based system that detects electrical device ON/OFF status using machine learning concepts to optimize energy consumption.</p>
-          <div class="proj-tags">
-            <span class="proj-tag">Python</span>
-            <span class="proj-tag">Machine Learning</span>
+            <a href="https://humeranaaz397-ops.github.io/student_club/" target="_blank" class="proj-link">↗ Live Demo</a>
+            <a href="https://github.com/sudharshanjaggula605-droid/student-club.git" target="_blank" class="proj-link">↗ GitHub</a>
           </div>
         </div>
 
-        <a href="https://sudharshanjaggula605-droid.github.io/project_swiggy_staticpage/" target="_blank" class="project-card">
+        <a href="https://sudharshanjaggula605-droid.github.io/ipl_landingpage/" target="_blank" class="project-card">
+          <div class="proj-num">02</div>
+          <div class="proj-title">IPL Landing Page</div>
+          <p class="proj-desc">The IPL 2026 — Experience the Thrill project is a modern and responsive sports website designed to provide users with a complete digital experience of the Indian Premier League. It includes live match updates, team details, match schedules, points table, player statistics, and match highlights, all built with HTML5, CSS3, and JavaScript.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">HTML</span>
+            <span class="proj-tag">CSS</span>
+            <span class="proj-tag">JavaScript</span>
+          </div>
+          <div class="proj-links">
+            <span class="proj-link">↗ Live Demo</span>
+          </div>
+        </a>
+
+        <a href="https://sudharshanjaggula605-droid.github.io/typespeed-game/" target="_blank" class="project-card">
           <div class="proj-num">03</div>
+          <div class="proj-title">TypeSpeedgame</div>
+          <p class="proj-desc">A typing speed game that displays random sentences and tracks performance in real time. It calculates Words Per Minute (WPM), accuracy, time taken, and mistakes so users can improve typing efficiency with engaging HTML5, CSS3, and JavaScript gameplay.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">HTML</span>
+            <span class="proj-tag">CSS</span>
+            <span class="proj-tag">JavaScript</span>
+          </div>
+          <div class="proj-links">
+            <span class="proj-link">↗ Live Demo</span>
+          </div>
+        </a>
+
+        <a href="https://sudharshanjaggula605-droid.github.io/project_swiggy_staticpage/" target="_blank" class="project-card">
+          <div class="proj-num">04</div>
           <div class="proj-title">Swiggy Static Page</div>
           <p class="proj-desc">A fully responsive static clone of the Swiggy food delivery website, replicating the original UI layout and design with clean HTML &amp; CSS.</p>
           <div class="proj-tags">
@@ -449,7 +477,7 @@
         </a>
 
         <a href="https://github.com/sudharshanjaggula605-droid/Final_project.git" target="_blank" class="project-card">
-          <div class="proj-num">04</div>
+          <div class="proj-num">05</div>
           <div class="proj-title">IPL Score Tracker</div>
           <p class="proj-desc">Python-based application to track and display live/recent IPL cricket match scores, team standings, and player statistics.</p>
           <div class="proj-tags">
@@ -560,6 +588,15 @@
         menuToggle.classList.remove('active');
         navLinks.classList.remove('active');
       }
+    });
+
+    // Open Student Club live demo when the card is clicked
+    document.querySelectorAll('.project-card[data-live-demo]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (!e.target.closest('a')) {
+          window.open(card.dataset.liveDemo, '_blank');
+        }
+      });
     });
   </script>
 
