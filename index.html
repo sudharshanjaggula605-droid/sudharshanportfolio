@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sudharshan Jaggula | Full-Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{
@@ -39,16 +40,17 @@
     .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
     /* HERO */
-    .hero{padding:6rem 0 5rem;text-align:center;position:relative;overflow:hidden}
+    .hero{padding:6rem 0 5rem;position:relative;overflow:hidden;display:flex;align-items:center;gap:4rem}
     .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 20%,rgba(0,204,204,0.05) 0%,transparent 50%),radial-gradient(circle at 70% 80%,rgba(0,51,102,0.03) 0%,transparent 50%);pointer-events:none}
-    .hero-avatar{display:flex;justify-content:center;margin-bottom:2rem;padding:10px;background:linear-gradient(135deg,rgba(0,204,204,0.16),rgba(0,51,102,0.08));border-radius:32px;box-shadow:0 18px 50px rgba(0,204,204,0.16);width:min-content;margin-inline:auto}
+    .hero-content{flex:1;text-align:left;z-index:1}
+    .hero-avatar{display:flex;justify-content:flex-end;margin-bottom:0;padding:10px;background:linear-gradient(135deg,rgba(0,204,204,0.16),rgba(0,51,102,0.08));border-radius:32px;box-shadow:0 18px 50px rgba(0,204,204,0.16);width:min-content;flex-shrink:0;z-index:1}
     .hero-avatar img{width:200px;height:280px;border-radius:28px;border:3px solid rgba(255,255,255,0.15);box-shadow:0 16px 30px rgba(0,0,0,0.18);object-fit:cover;background:var(--bg);transition:transform 0.3s ease,filter 0.3s ease}
     .hero-avatar img:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.03)}
     .tag{display:inline-flex;align-items:center;font-size:0.75rem;font-family:var(--mono);color:var(--green);background:linear-gradient(135deg,rgba(0,255,255,0.1),rgba(0,204,204,0.05));border:1px solid rgba(0,255,255,0.3);border-radius:100px;padding:6px 16px;margin-bottom:2rem;letter-spacing:0.05em;backdrop-filter:blur(10px);box-shadow:0 4px 15px rgba(0,255,255,0.1)}
-    h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-0.04em;margin-bottom:1.5rem;text-shadow:0 0 20px rgba(0,204,204,0.2)}
+    h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-0.04em;margin-bottom:1.5rem;text-shadow:0 0 20px rgba(0,204,204,0.2);text-align:left}
     h1 .line2{color:var(--accent);display:block;text-shadow:0 0 25px rgba(0,204,204,0.3)}
-    .sub{font-size:clamp(0.85rem,1.2vw,1rem);color:var(--muted);line-height:1.8;max-width:600px;margin:0 auto 2.5rem;font-weight:400}
-    .cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .sub{font-size:clamp(0.85rem,1.2vw,1rem);color:var(--muted);line-height:1.8;max-width:600px;margin:0 0 2.5rem 0;font-weight:400;text-align:left}
+    .cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:flex-start}
     .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0b;font-family:var(--font);font-size:clamp(0.8rem,1vw,0.85rem);font-weight:700;letter-spacing:0.04em;padding:14px 32px;border:none;border-radius:12px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;display:inline-block;box-shadow:0 4px 15px rgba(0,204,204,0.3);position:relative;overflow:hidden;min-height:48px;display:inline-flex;align-items:center}
     .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.5s}
     .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,204,204,0.4)}
@@ -66,11 +68,30 @@
     .skills-group{margin-bottom:2rem;text-align:center}
     .skills-group-title{font-size:clamp(0.65rem,1.2vw,0.72rem);font-family:var(--mono);color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;text-shadow:0 0 10px rgba(0,204,204,0.3)}
     .skills-grid{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1rem;justify-content:center}
-    .skill-chip{background:linear-gradient(135deg,var(--bg3),rgba(0,51,102,0.1));border:1px solid rgba(0,204,204,0.2);border-radius:12px;padding:10px 16px;font-size:clamp(0.7rem,1vw,0.78rem);font-family:var(--mono);color:var(--muted);transition:all 0.3s ease;cursor:default;position:relative;overflow:hidden}
+    .skill-chip{background:linear-gradient(135deg,var(--bg3),rgba(0,51,102,0.1));border:1px solid rgba(0,204,204,0.2);border-radius:12px;padding:10px 16px;font-size:clamp(0.7rem,1vw,0.78rem);font-family:var(--mono);color:var(--muted);transition:all 0.3s ease;cursor:default;position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px}
+    .skill-chip i{font-size:1.1em;color:var(--accent);opacity:0.95;transition:all 0.3s ease;text-shadow:0 0 8px rgba(0,204,204,0.15)}
+    .skill-chip i.fa-python{color:#3776AB;text-shadow:0 0 12px rgba(55,118,171,0.45)}
+    .skill-chip i.fa-js-square{color:#f7df1e;text-shadow:0 0 12px rgba(247,223,30,0.45)}
+    .skill-chip i.fa-html5{color:#e34f26;text-shadow:0 0 12px rgba(227,79,38,0.45)}
+    .skill-chip i.fa-css3-alt{color:#264de4;text-shadow:0 0 12px rgba(38,77,228,0.45)}
+    .skill-chip i.fa-flask{color:#a7b1bb;text-shadow:0 0 10px rgba(167,177,187,0.35)}
+    .skill-chip i.fa-database{color:#4479a1;text-shadow:0 0 10px rgba(68,121,161,0.35)}
+    .skill-chip i.fa-file-excel{color:#217346;text-shadow:0 0 10px rgba(33,115,70,0.35)}
+    .skill-chip i.fa-file-word{color:#2a5699;text-shadow:0 0 10px rgba(42,86,153,0.35)}
+    .skill-chip i.fa-file-powerpoint{color:#d24726;text-shadow:0 0 10px rgba(210,71,38,0.35)}
+    .skill-chip.python{background:linear-gradient(135deg,#3776AB 0%,#0f3f6f 100%);border-color:rgba(55,118,171,0.55);color:#eef7ff}
+    .skill-chip.javascript{background:linear-gradient(135deg,#f7df1e 0%,#e0c41b 100%);border-color:rgba(247,223,30,0.55);color:#111}
+    .skill-chip.html{background:linear-gradient(135deg,#e34f26 0%,#f06529 100%);border-color:rgba(227,79,38,0.55);color:#fff}
+    .skill-chip.css{background:linear-gradient(135deg,#264de4 0%,#2965f1 100%);border-color:rgba(38,77,228,0.55);color:#fff}
+    .skill-chip.flask{background:linear-gradient(135deg,#5f6f87 0%,#2b3340 100%);border-color:rgba(167,177,187,0.55);color:#eef2f7}
+    .skill-chip.mysql{background:linear-gradient(135deg,#00758f 0%,#003948 100%);border-color:rgba(0,117,143,0.55);color:#eef7ff}
+    .skill-chip.excel{background:linear-gradient(135deg,#217346 0%,#163f26 100%);border-color:rgba(33,115,70,0.55);color:#eef7ff}
+    .skill-chip.word{background:linear-gradient(135deg,#2a5699 0%,#1a355f 100%);border-color:rgba(42,86,153,0.55);color:#eef7ff}
+    .skill-chip.powerpoint{background:linear-gradient(135deg,#d24726 0%,#7f2a19 100%);border-color:rgba(210,71,38,0.55);color:#fff}
     .skill-chip::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,204,204,0.1),transparent);transition:left 0.5s}
     .skill-chip:hover{border-color:rgba(0,204,204,0.5);color:var(--accent);transform:translateY(-3px) scale(1.05);box-shadow:0 6px 20px rgba(0,204,204,0.2)}
     .skill-chip:hover::before{left:100%}
-    .skill-chip.hot{border-color:rgba(0,204,204,0.4);color:var(--accent);background:linear-gradient(135deg,rgba(0,204,204,0.1),rgba(0,51,102,0.05));box-shadow:0 4px 15px rgba(0,204,204,0.15)}
+    .skill-chip.hot{border-color:rgba(0,204,204,0.4);color:var(--accent);background:linear-gradient(135deg,rgba(0,204,204,0.12),rgba(255,255,255,0.06));box-shadow:0 4px 15px rgba(0,204,204,0.15)}
     .skill-chip.hot::before{background:linear-gradient(90deg,transparent,rgba(0,204,204,0.2),transparent)}
 
     /* PROJECTS */
@@ -131,7 +152,12 @@
       .nav-links{gap:1.5rem}
       .wrapper{padding:0 1.5rem;max-width:100%}
       h1{font-size:clamp(2rem,5vw,3.5rem)}
-      .hero{padding:4.5rem 0 3.5rem}
+      .hero{padding:4.5rem 0 3.5rem;flex-direction:column;text-align:center;gap:2rem}
+      .hero-content{text-align:center}
+      .hero-avatar{justify-content:center;margin:0}
+      .tag{justify-content:center;margin-left:auto;margin-right:auto}
+      .sub{text-align:center;margin-left:auto;margin-right:auto}
+      .cta-row{justify-content:center}
       .section{padding:3.5rem 0}
       .projects-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
       .contact-cards{grid-template-columns:repeat(2,1fr)}
@@ -150,17 +176,20 @@
       .nav-links a:hover{border-radius:0}
       .nav-inner > div:last-child{display:none}
       .wrapper{padding:0 1rem}
-      .hero{padding:3rem 0 2.5rem}
-      .tag{font-size:0.7rem;padding:5px 12px;margin-bottom:1.5rem}
-      h1{font-size:clamp(1.8rem,4vw,2.8rem)}
-      .sub{font-size:0.9rem;margin-bottom:2rem}
+      .hero{padding:3rem 0 2.5rem;flex-direction:column;text-align:center}
+      .hero-content{text-align:center}
+      .hero-avatar{justify-content:center}
+      .tag{font-size:0.7rem;padding:5px 12px;margin-bottom:1.5rem;justify-content:center;margin-left:auto;margin-right:auto}
+      h1{font-size:clamp(1.8rem,4vw,2.8rem);text-align:center}
+      .sub{font-size:0.9rem;margin-bottom:2rem;text-align:center}
       .cta-row{gap:0.8rem;flex-direction:column;align-items:stretch}
       .btn-primary,.btn-outline{width:100%;text-align:center;padding:12px 24px}
       .section{padding:2.5rem 0}
       .section-label{font-size:0.75rem;padding:10px 16px;margin-bottom:2rem;gap:12px}
       .skills-group{margin-bottom:1.5rem}
       .skills-grid{gap:10px}
-      .skill-chip{font-size:0.72rem;padding:8px 12px}
+      .skill-chip{font-size:0.72rem;padding:8px 12px;gap:6px}
+      .skill-chip i{font-size:0.9em}
       .projects-grid{grid-template-columns:1fr;gap:16px}
       .project-card{padding:1.2rem}
       .proj-title{font-size:0.95rem}
@@ -189,15 +218,18 @@
       .nav-links a{font-size:0.65rem;padding:8px 1.5rem;display:block;border:none;background:none;border-radius:0}
       .nav-inner > div:last-child{display:none}
       .wrapper{padding:0 0.8rem}
-      .hero{padding:2.5rem 0 2rem}
-      h1{font-size:clamp(1.5rem,3.5vw,2.2rem);line-height:1.2}
-      .sub{font-size:0.85rem;line-height:1.6;margin-bottom:1.5rem}
+      .hero{padding:2.5rem 0 2rem;flex-direction:column;text-align:center}
+      .hero-content{text-align:center}
+      .hero-avatar{justify-content:center}
+      h1{font-size:clamp(1.5rem,3.5vw,2.2rem);line-height:1.2;text-align:center}
+      .sub{font-size:0.85rem;line-height:1.6;margin-bottom:1.5rem;text-align:center}
       .cta-row{gap:0.6rem}
       .btn-primary,.btn-outline{padding:10px 16px;font-size:0.78rem}
       .section{padding:2rem 0}
       .section-label{font-size:0.65rem;padding:8px 12px;margin-bottom:1.5rem}
       .skills-group-title{font-size:0.65rem;margin-bottom:0.6rem}
-      .skill-chip{font-size:0.65rem;padding:6px 10px}
+      .skill-chip{font-size:0.65rem;padding:6px 10px;gap:5px}
+      .skill-chip i{font-size:0.85em}
       .proj-num{font-size:0.6rem}
       .proj-title{font-size:0.85rem;margin-bottom:0.4rem}
       .proj-desc{font-size:0.7rem;margin-bottom:0.8rem;line-height:1.5}
@@ -237,6 +269,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#projects">projects</a></li>
         <li><a href="#skills">skills</a></li>
+        <li><a href="#softskills">soft skills</a></li>
         <li><a href="#certifications">certifications</a></li>
         <li><a href="#education">education</a></li>
         <li><a href="#contact">contact</a></li>
@@ -250,15 +283,17 @@
   <!-- HERO -->
   <div class="wrapper">
     <div class="hero">
+      <div class="hero-content">
+        <div class="tag">✦ aspiring full-stack developer</div>
+        <h1>Sudharshan<span class="line2">Jaggula.</span></h1>
+        <p class="sub">Hi! I'm Sudharshan, an aspiring Full-Stack Web Developer passionate about building clean, user-friendly, and efficient web applications. I'm learning HTML, CSS, JavaScript, Python, and modern frameworks to strengthen both my frontend and backend skills. I enjoy turning ideas into real applications and continuously improving my problem-solving abilities.</p>
+        <div class="cta-row">
+          <a href="#projects" class="btn-primary">View my projects ↓</a>
+          <a href="#contact" class="btn-outline">Contact me</a>
+        </div>
+      </div>
       <div class="hero-avatar">
         <img src="./ChatGPT Image May 2, 2026, 11_12_40 AM.png" alt="Sudharshan Jaggula" />
-      </div>
-      <div class="tag">✦ aspiring full-stack developer</div>
-      <h1>Sudharshan<span class="line2">Jaggula.</span></h1>
-      <p class="sub">Hi! I'm Sudharshan, an aspiring Full-Stack Web Developer passionate about building clean, user-friendly, and efficient web applications. I'm learning HTML, CSS, JavaScript, Python, and modern frameworks to strengthen both my frontend and backend skills. I enjoy turning ideas into real applications and continuously improving my problem-solving abilities.</p>
-      <div class="cta-row">
-        <a href="#projects" class="btn-primary">View my projects ↓</a>
-        <a href="#contact" class="btn-outline">Contact me</a>
       </div>
     </div>
   </div>
@@ -270,38 +305,59 @@
       <div class="skills-group">
         <div class="skills-group-title">Programming Languages</div>
         <div class="skills-grid">
-          <div class="skill-chip hot">Python</div>
-          <div class="skill-chip hot">JavaScript</div>
+          <div class="skill-chip hot python"><i class="fab fa-python"></i> Python</div>
+          <div class="skill-chip hot javascript"><i class="fab fa-js-square"></i> JavaScript</div>
         </div>
       </div>
       <div class="skills-group">
         <div class="skills-group-title">Web Technologies</div>
         <div class="skills-grid">
-          <div class="skill-chip hot">HTML5</div>
-          <div class="skill-chip hot">CSS3</div>
-          <div class="skill-chip">Flask</div>
-          <div class="skill-chip">REST APIs</div>
+          <div class="skill-chip hot html"><i class="fab fa-html5"></i> HTML5</div>
+          <div class="skill-chip hot css"><i class="fab fa-css3-alt"></i> CSS3</div>
+          <div class="skill-chip flask"><i class="fas fa-flask"></i> Flask</div>
+          <div class="skill-chip"><i class="fas fa-project-diagram"></i> REST APIs</div>
         </div>
       </div>
       <div class="skills-group">
         <div class="skills-group-title">Database &amp; Tools</div>
         <div class="skills-grid">
-          <div class="skill-chip">MySQL</div>
-          <div class="skill-chip">CRUD Operations</div>
-          <div class="skill-chip">Schema Design</div>
-          <div class="skill-chip">MS Excel</div>
-          <div class="skill-chip">MS Word</div>
-          <div class="skill-chip">PowerPoint</div>
+          <div class="skill-chip mysql"><i class="fas fa-database"></i> MySQL</div>
+          <div class="skill-chip"><i class="fas fa-cogs"></i> CRUD Operations</div>
+          <div class="skill-chip"><i class="fas fa-layer-group"></i> Schema Design</div>
+          <div class="skill-chip excel"><i class="far fa-file-excel"></i> MS Excel</div>
+          <div class="skill-chip word"><i class="far fa-file-word"></i> MS Word</div>
+          <div class="skill-chip powerpoint"><i class="far fa-file-powerpoint"></i> PowerPoint</div>
         </div>
       </div>
       <div class="skills-group">
         <div class="skills-group-title">Python Concepts</div>
         <div class="skills-grid">
-          <div class="skill-chip">OOPs</div>
-          <div class="skill-chip">Exception Handling</div>
-          <div class="skill-chip">File Handling</div>
-          <div class="skill-chip">Functions &amp; Modules</div>
-          <div class="skill-chip">Data Structures</div>
+          <div class="skill-chip"><i class="fas fa-cube"></i> OOPs</div>
+          <div class="skill-chip"><i class="fas fa-exclamation-triangle"></i> Exception Handling</div>
+          <div class="skill-chip"><i class="fas fa-file-code"></i> File Handling</div>
+          <div class="skill-chip"><i class="fas fa-sitemap"></i> Functions &amp; Modules</div>
+          <div class="skill-chip"><i class="fas fa-th-list"></i> Data Structures</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOFT SKILLS -->
+  <div class="section" id="softskills">
+    <div class="wrapper">
+      <div class="section-label">Soft Skills</div>
+      <div class="skills-group">
+        <div class="skills-grid">
+          <div class="skill-chip"><i class="fas fa-comments"></i> Communication</div>
+          <div class="skill-chip"><i class="fas fa-lightbulb"></i> Problem Solving</div>
+          <div class="skill-chip"><i class="fas fa-users"></i> Teamwork</div>
+          <div class="skill-chip"><i class="fas fa-clock"></i> Time Management</div>
+          <div class="skill-chip"><i class="fas fa-sync-alt"></i> Adaptability</div>
+          <div class="skill-chip"><i class="fas fa-brain"></i> Critical Thinking</div>
+          <!-- <div class="skill-chip"><i class="fas fa-star"></i> Attention to Detail</div> -->
+          <!-- <div class="skill-chip"><i class="fas fa-rocket"></i> Quick Learner</div> -->
+          <!-- <div class="skill-chip"><i class="fas fa-handshake"></i> Collaboration</div> -->
+          <div class="skill-chip"><i class="fas fa-chart-line"></i> Leadership</div>
         </div>
       </div>
     </div>
